@@ -57,8 +57,7 @@ $(document).ready(function () {
             success: function () {
                 console.log(("Added to the db"))
             }, error: function () {
-                console.log(res);
-                alert("Error");
+                console.log("fail");
             }
         })
     })
@@ -81,8 +80,7 @@ $(document).ready(function () {
             success: function () {
                 console.log(("Added to the db"))
             }, error: function () {
-                console.log();
-                alert("Error");
+                console.log("fail");
             }
         })
     })
@@ -94,8 +92,7 @@ $(document).ready(function () {
             success: function () {
                 console.log(("Deleted from DB"))
             }, error: function () {
-                console.log();
-                alert("Error");
+                console.log("fail");
             }
         })
     })
