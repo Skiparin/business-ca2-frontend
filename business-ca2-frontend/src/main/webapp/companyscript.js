@@ -9,7 +9,7 @@ $(document).ready(function () {
 
     $("#getAllC").click(function () {
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/company/complete",
+            url: "http://localhost:8080/ca2-backend/api/company/complete",
             type: "GET",
             contentType: "application/json",
             success: function (res) {
@@ -21,7 +21,7 @@ $(document).ready(function () {
         $("#getById").click(function () {
         var id = $("#companyId").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/company/complete/" + id,
+            url: "http://localhost:8080/ca2-backend/api/company/complete/" + id,
             type: "GET",
             contentType: "application/json",
             success: function (res) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
         var num = $("#Number").val();
         var email = $("#Email").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/company",
+            url: "http://localhost:8080/ca2-backend/api/company",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({
@@ -66,7 +66,7 @@ $(document).ready(function () {
         var marketvalue = $("#Marketvalue2").val();
         var num = $("#Number2").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/company/",
+            url: "http://localhost:8080/ca2-backend/api/company/",
             type: "PUT",
             contentType: "application/json",
             data: JSON.stringify({
@@ -89,7 +89,7 @@ $(document).ready(function () {
     $("#delete").click(function () {
         var id = $("#idDelete").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/company/" + id,
+            url: "http://localhost:8080/ca2-backend/api/company/" + id,
             type: "DELETE",
             success: function () {
                 console.log(("Deleted from DB"))

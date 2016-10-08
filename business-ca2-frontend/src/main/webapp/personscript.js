@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     $("#getAllP").click(function () {
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/person/complete",
+            url: "http://localhost:8080/ca2-backend/api/person/complete",
             type: "GET",
             contentType: "application/json",
             success: function (res) {
@@ -20,7 +20,7 @@ $(document).ready(function () {
     $("#getById").click(function () {
         var id = $("#personId").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/person/complete/" + id,
+            url: "http://localhost:8080/ca2-backend/api/person/complete/" + id,
             type: "GET",
             contentType: "application/json",
             success: function (res) {
@@ -32,7 +32,7 @@ $(document).ready(function () {
     $("#getByZipcode").click(function () {
         var id = $("#personZipcode").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/person/zipcode/" + id,
+            url: "http://localhost:8080/ca2-backend/api/person/zipcode/" + id,
             type: "GET",
             contentType: "application/json",
             success: function (res) {
@@ -46,7 +46,7 @@ $(document).ready(function () {
         var lname = $("#lName").val();
         var email = $("#email").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/person",
+            url: "http://localhost:8080/ca2-backend/api/person",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify({
@@ -69,7 +69,7 @@ $(document).ready(function () {
         var lname = $("#lName2").val();
         var email = $("#email2").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/person/",
+            url: "http://localhost:8080/ca2-backend/api/person/",
             type: "PUT",
             contentType: "application/json",
             data: JSON.stringify({
@@ -89,7 +89,7 @@ $(document).ready(function () {
      $("#delete").click(function () {
         var id = $("#idDelete").val();
         $.ajax({
-            url: "http://localhost:8084/ca2-backend/api/person/" + id,
+            url: "http://localhost:8080/ca2-backend/api/person/" + id,
             type: "DELETE",
             success: function () {
                 console.log(("Deleted from DB"))
@@ -121,7 +121,22 @@ function createTable(data) {
     }
 
     for (var i = 0; i < data.length; i++) {
-        header += start + data[i].firstName + mid + data[i].lastName + mid + data[i].hobbies + mid + data[i].email + mid + data[i].phones + end;
+        var hobbies = data[i].hobbies;
+        var phones = data[i].phones;
+        var phone = "";
+        var hobby = "";
+        if (hobbies.constructor === Array){
+            for (var j = 0; j < hobbies.length; j++) {
+                hobby += hobbies[j].name + ", ";
+            }
+        } 
+        if (phones.constructor === Array){
+            for (var k = 0; k < phones.length; k++) {
+                phone += phones[k].number + ", ";
+            }
+        }
+        console.log(data[i])
+        header += start + data[i].firstName + mid + data[i].lastName + mid + hobby + mid + data[i].email + mid + phone + end;
     }
     $("#mainPageData").html(header);
 }
