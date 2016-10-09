@@ -60,7 +60,13 @@ and open the template in the editor.
                 <li>
                     <h3>Error responses</h3>
                     <p>
-                        SÆT IND HER!
+                        We wanted to handle exceptions in our project, so we made a new Exception called JSONException. <br>
+                        We use this exception to handle errors coming when we use JPA calling and making changes to our database. <br>
+                        As an example when we try to get a Person Object from our database with a ID, that doesn't exist, we will get a Person that is null. <br>
+                        When we so check if the Person object that we get from our database is null, <br>
+                        and it is we will throw a new JSONException with a message about the Exception and why it was thrown. <br>
+                        This will then be made into a String in JSON format and sent as a response from our REST API. <br>
+                        We didn't have time to handle it on the client side.
                     </p>
                 </li>
                 <li>
