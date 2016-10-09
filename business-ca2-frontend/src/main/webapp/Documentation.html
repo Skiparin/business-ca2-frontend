@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Documentation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <h1>
+           Documentation. 
+        </h1>
+        <div>
+            <ul>
+                <li>
+                    <h3>General description</h3>
+                </li>
+                <li>
+                    <h3>How we made the project</h3>
+                    <p>
+                        We startede by making the backend.<br>
+                        we choose to make the entities and thier relations from java. <br>
+                        <img src="Images/CA2.png" alt=""/>
+                        Here you can see how our relations.
+                        We made facades to InfonEntity, Phone and address. Then we made a main facade when we call the 3 other mapper facades.
+                        When our Rest calls a metode in the main facade, the main facade then calls one of the 3 mapper facades. The mapper facade then get or makes the chance in the database and returns either a Person or a Company.
+                    </p>
+                </li>
+                <li>
+                    <h3>JUnit test and Rest Assured test</h3>
+                    <ul>
+                        <li>
+                            <h4>JUnit test</h4>
+                        </li>
+                        <li>
+                            <h4>Rest Assured test</h4>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Contributers</h3>
+                    <p>Here you can see a more specific who made what. But in general we helped each other.</p>
+                    <ul>
+                        <li>
+                            <h4>Mikkel Ziemmer</h4>
+                            <p>Made the facade, overlooked error handling, stood for uploading the server to Digital Oacen.</p>
+                        </li>
+                        <li>
+                            <h4>Ørvur Guttesen</h4>
+                            <p>Made some of the entities, Rest for company, Error handling and Documentation.</p>
+                        </li>
+                        <li>
+                            <h4>Kasper Vetter</h4>
+                            <p>Made Rest for Person, Rest assured test and the frontend site.</p>
+                        </li>
+                        <li>
+                            <h4>Phillip Brink</h4>
+                            <p>Made some of the entities, Junit test and Documentation.</p>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </div>
+    </body>
+</html>
